@@ -10,13 +10,6 @@ var parseFeed = function(data) {
 		var departuretime = data[i].departures[1].time;
 		var nextdeparturetime = data[i].departures[2].time;
 	
-		
-	//var route = data.route;
-	//var location = data.location;
-	//var destination = data.destination;
-	//var departuretime = data.departures[1].time;
-	//var nextdeparturetime = data.departures[2].time;
-	
 	items.push({
 		title: location.substring(0,4) + "->" + destination.substring(0,4),
 		subtitle: departuretime + "  |  " + nextdeparturetime
@@ -30,7 +23,6 @@ ajax({
     type:'json'
   },
   function(data) {
-	//data = { url: 'http://pontveer.nl/api/?r=NDSM-veer&l=Centraal+Station&d=NDSM-werf', type: 'json'};
 	dataJSON = parseFeed(data);
     console.log('data');
     console.log('SHOW MENU');
